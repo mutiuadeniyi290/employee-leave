@@ -1,0 +1,10 @@
+Employee_ID,Employee_Name,Start_Date,End_Date,Leave_Taken,Total_Annual_Leave,Leave_Remaining,Reason
+E101,John Doe,2024-01-05,2024-01-10,5,20,15,Annual Leave
+E102,Jane Smith,2024-02-01,2024-02-03,2,20,18,Personal Leave
+E103,Mike Johnson,2024-03-15,2024-03-20,5,20,15,Sick Leave
+E104,Emily Davis,2024-04-05,2024-04-07,2,20,18,Casual Leave
+E105,James Wilson,2024-05-10,2024-05-14,4,20,16,Annual Leave
+E106,Sarah Brown,2024-06-01,2024-06-30,30,20,-10,Maternity Leave
+E107,Robert Green,2024-07-01,2024-07-05,5,20,15,Paternity Leave
+E108,Linda White,2024-08-10,2024-08-20,10,20,10,Compassionate Leave
+E109,David Black,2024-09-15,2024-09-25,10,20,10,Study Leave
