@@ -1,5 +1,37 @@
 
 
+import pandas as pd
+import streamlit as st
+
+# Define containers for better layout
+header = st.container()
+dataset = st.container()
+features = st.container()
+model_training = st.container()
+
+# Header Section
+with header:
+    st.title("Welcome to My Awesome Leave Request Application!")
+    st.text("In this simple project, we look into the leave calculation for each employee!")
+
+# Dataset Section
+with dataset:
+    st.header("Dataset Overview")
+    st.text("This section can show the dataset or sample data being analyzed.")
+    # Placeholder for dataset upload or display
+    st.write("Dataset loading and preview can go here.")
+
+    # Load dataset
+    mydata = pd.read_csv('employee_leave_data.txt')
+
+    # Strip leading and trailing spaces from column names
+    mydata.columns = mydata.columns.str.strip()
+
+
+
+
+
+
 
 # import pandas as pd
 # import streamlit as st
@@ -106,114 +138,114 @@
 #         st.write("R2 Score:", r2_score(y, Prediction))
 
 
-import pandas as pd
-import streamlit as st
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+# import pandas as pd
+# import streamlit as st
+# from sklearn.ensemble import RandomForestRegressor
+# from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-# Define containers for better layout
-header = st.container()
-dataset = st.container()
-features = st.container()
-model_training = st.container()
+# # Define containers for better layout
+# header = st.container()
+# dataset = st.container()
+# features = st.container()
+# model_training = st.container()
 
-# Header Section
-with header:
-    st.title("Welcome to My Awesome Leave Request Application!")
-    st.text("In this simple project, we look into the leave calculation for each employee!")
+# # Header Section
+# with header:
+#     st.title("Welcome to My Awesome Leave Request Application!")
+#     st.text("In this simple project, we look into the leave calculation for each employee!")
 
-# Dataset Section
-with dataset:
-    st.header("Dataset Overview")
-    st.text("This section can show the dataset or sample data being analyzed.")
-    # Load dataset
-    mydata = pd.read_csv('employee_leave_data.txt')
+# # Dataset Section
+# with dataset:
+#     st.header("Dataset Overview")
+#     st.text("This section can show the dataset or sample data being analyzed.")
+#     # Load dataset
+#     mydata = pd.read_csv('employee_leave_data.txt')
 
-    # Strip leading and trailing spaces from column names
-    mydata.columns = mydata.columns.str.strip()
+#     # Strip leading and trailing spaces from column names
+#     mydata.columns = mydata.columns.str.strip()
 
-    # Convert 'Start_Date' and 'End_Date' to datetime format
-    mydata['Start_Date'] = pd.to_datetime(mydata['Start_Date'], errors='coerce')
-    mydata['End_Date'] = pd.to_datetime(mydata['End_Date'], errors='coerce')
+#     # Convert 'Start_Date' and 'End_Date' to datetime format
+#     mydata['Start_Date'] = pd.to_datetime(mydata['Start_Date'], errors='coerce')
+#     mydata['End_Date'] = pd.to_datetime(mydata['End_Date'], errors='coerce')
 
-    # Calculate Leave Duration (difference between start and end dates in days)
-    mydata['Leave_Duration'] = (mydata['End_Date'] - mydata['Start_Date']).dt.days
+#     # Calculate Leave Duration (difference between start and end dates in days)
+#     mydata['Leave_Duration'] = (mydata['End_Date'] - mydata['Start_Date']).dt.days
 
-    st.write(mydata.head())
+#     st.write(mydata.head())
 
-    # Employee selection dropdown
-    employee_name = st.selectbox('Select an Employee to View Data:', mydata['Employee_Name'].unique())
+#     # Employee selection dropdown
+#     employee_name = st.selectbox('Select an Employee to View Data:', mydata['Employee_Name'].unique())
     
-    # Filter dataset by selected employee
-    selected_employee_data = mydata[mydata['Employee_Name'] == employee_name]
+#     # Filter dataset by selected employee
+#     selected_employee_data = mydata[mydata['Employee_Name'] == employee_name]
     
-    st.subheader(f"Leave Details for {employee_name}")
-    st.write(selected_employee_data)
+#     st.subheader(f"Leave Details for {employee_name}")
+#     st.write(selected_employee_data)
 
-    # Count Leave Taken and Display
-    st.subheader("Leave Taken Distribution")
-    if 'Leave_Taken' in mydata.columns:
-        # Create a DataFrame for leave counts
-        countleave = mydata['Leave_Taken'].value_counts().reset_index()
-        countleave.columns = ['Leave_Taken', 'Count']
-        # Display bar chart (dynamic based on slider)
-        st.bar_chart(countleave.set_index('Leave_Taken'))
-    else:
-        st.error("Column 'Leave_Taken' not found in the dataset.")
+#     # Count Leave Taken and Display
+#     st.subheader("Leave Taken Distribution")
+#     if 'Leave_Taken' in mydata.columns:
+#         # Create a DataFrame for leave counts
+#         countleave = mydata['Leave_Taken'].value_counts().reset_index()
+#         countleave.columns = ['Leave_Taken', 'Count']
+#         # Display bar chart (dynamic based on slider)
+#         st.bar_chart(countleave.set_index('Leave_Taken'))
+#     else:
+#         st.error("Column 'Leave_Taken' not found in the dataset.")
 
-# Features Section
-with features:
-    st.header("Features Overview")
-    st.text("This section can list the features or metrics being analyzed.")
-    st.write("Examples: Leave Utilization %, Leave Duration Categories, etc.")
+# # Features Section
+# with features:
+#     st.header("Features Overview")
+#     st.text("This section can list the features or metrics being analyzed.")
+#     st.write("Examples: Leave Utilization %, Leave Duration Categories, etc.")
     
-    max_depth = st.slider('What should be the max-depth of the model?',
-                          min_value=10, max_value=100, value=20, step=10)
+#     max_depth = st.slider('What should be the max-depth of the model?',
+#                           min_value=10, max_value=100, value=20, step=10)
 
-    # Set number of trees in the model
-    n_estimator = st.selectbox('How many trees should the model use?', 
-                               options=[100, 200, 300, 400, 'NO LIMIT'], 
-                               index=0)
+#     # Set number of trees in the model
+#     n_estimator = st.selectbox('How many trees should the model use?', 
+#                                options=[100, 200, 300, 400, 'NO LIMIT'], 
+#                                index=0)
 
-    # Input features as a comma-separated string, and split it into a list
-    input_features = st.text_input('Which features should be used? (comma-separated)', 'Total_Annual_Leave, Leave_Remaining, Leave_Duration')
-    input_features = input_features.split(',')
-    input_features = [feature.strip() for feature in input_features]  # Strip spaces from feature names
+#     # Input features as a comma-separated string, and split it into a list
+#     input_features = st.text_input('Which features should be used? (comma-separated)', 'Total_Annual_Leave, Leave_Remaining, Leave_Duration')
+#     input_features = input_features.split(',')
+#     input_features = [feature.strip() for feature in input_features]  # Strip spaces from feature names
 
-    # Check if all features exist in the dataset
-    missing_columns = [col for col in input_features if col not in mydata.columns]
-    if missing_columns:
-        st.error(f"Missing columns in the dataset: {missing_columns}")
-    else:
-        # Initialize the regressor model
-        if n_estimator == 'NO LIMIT':
-            regr = RandomForestRegressor(max_depth=max_depth)
-        else:
-            regr = RandomForestRegressor(max_depth=max_depth, n_estimators=n_estimator)
+#     # Check if all features exist in the dataset
+#     missing_columns = [col for col in input_features if col not in mydata.columns]
+#     if missing_columns:
+#         st.error(f"Missing columns in the dataset: {missing_columns}")
+#     else:
+#         # Initialize the regressor model
+#         if n_estimator == 'NO LIMIT':
+#             regr = RandomForestRegressor(max_depth=max_depth)
+#         else:
+#             regr = RandomForestRegressor(max_depth=max_depth, n_estimators=n_estimator)
 
-        # Selecting the features and target
-        x = mydata[input_features]
-        y = mydata[['Leave_Taken']]
+#         # Selecting the features and target
+#         x = mydata[input_features]
+#         y = mydata[['Leave_Taken']]
 
-        # Fitting the model
-        regr.fit(x, y)
+#         # Fitting the model
+#         regr.fit(x, y)
 
-        # Making predictions
-        Prediction = regr.predict(x)
-        st.write("Predictions: ", Prediction)
+#         # Making predictions
+#         Prediction = regr.predict(x)
+#         st.write("Predictions: ", Prediction)
 
-        # Display model evaluation metrics
-        st.subheader("Model Evaluation")
-        st.write("Mean Absolute Error:", mean_absolute_error(y, Prediction))
-        st.write("Mean Squared Error:", mean_squared_error(y, Prediction))
-        st.write("R2 Score:", r2_score(y, Prediction))
+#         # Display model evaluation metrics
+#         st.subheader("Model Evaluation")
+#         st.write("Mean Absolute Error:", mean_absolute_error(y, Prediction))
+#         st.write("Mean Squared Error:", mean_squared_error(y, Prediction))
+#         st.write("R2 Score:", r2_score(y, Prediction))
 
-        # Dynamically update graph based on slider (model depth)
-        st.subheader("Updated Leave Taken Distribution Based on Model Depth")
-        countleave = mydata['Leave_Taken'].value_counts().reset_index()
-        countleave.columns = ['Leave_Taken', 'Count']
-        # Update bar chart dynamically with new data based on slider
-        st.bar_chart(countleave.set_index('Leave_Taken'))
+#         # Dynamically update graph based on slider (model depth)
+#         st.subheader("Updated Leave Taken Distribution Based on Model Depth")
+#         countleave = mydata['Leave_Taken'].value_counts().reset_index()
+#         countleave.columns = ['Leave_Taken', 'Count']
+#         # Update bar chart dynamically with new data based on slider
+#         st.bar_chart(countleave.set_index('Leave_Taken'))
 
 
 
