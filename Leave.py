@@ -24,9 +24,15 @@ with dataset:
     # Load dataset
     mydata = pd.read_csv('employee_leave_data.txt')
 
-    # Strip leading and trailing spaces from column names
-    mydata.columns = mydata.columns.str.strip()
+    # Display the dataset
+    st.write(mydata)
 
+    # Count Leave Taken distribution
+    countleave = mydata['Leave_Taken'].value_counts().reset_index()
+    countleave.columns = ['Leave_Taken', 'Count']
+
+    # Display bar chart
+    st.bar_chart(countleave.set_index('Leave_Taken'))
 
 
 
