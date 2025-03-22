@@ -1222,6 +1222,11 @@ st.subheader("Leave summary")
 leave_status_summary = filtered_df['Reason'].value_counts()
 
 
+st.markdown(
+    "<hr style='border: 2px solid green;'>", unsafe_allow_html=True
+)
+
+
 total_leave = {
     "Annual": leave_status_summary.get("Annual Leave", 0),
     "Sick": leave_status_summary.get("Sick Leave", 0),
