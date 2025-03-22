@@ -1200,7 +1200,7 @@ st.title("📊 Customer Service Leave Trend Analysis by Month & Type")
 
 st.write("""
 This dashboard visualizes the number of leave applications per month, categorized by leave type.
-It helps HR track trends and manage leave planning.
+It helps Head of OPeration, Cs Supervisors mostly to track trends and manage leave distribution and planning.
 """)
 
 # Display filtered data table
