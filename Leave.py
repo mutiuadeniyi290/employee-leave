@@ -1,6 +1,88 @@
 
 
 
+# import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+# from sklearn.metrics import r2_score
+# from sklearn.model_selection import train_test_split
+# from sklearn.linear_model import LinearRegression
+# from sklearn.tree import DecisionTreeRegressor, plot_tree
+# from sklearn.metrics import mean_absolute_error, mean_squared_error
+
+# # Dataset
+# data = {
+#     'Name': ['John', 'Jane', 'Bill', 'Anna', 'Tom', 'Lisa', 'Gary', 'Nina', 'Mike', 'Sara',
+#              'Robert', 'Lucy', 'Steve', 'Emma', 'Chris', 'Sophia', 'Brian', 'Olivia', 'Mark', 'Chloe'],
+#     'Age': [18, 19, 20, 21, 22, 23, 21, 19, 20, 18, 21, 22, 20, 19, 18, 22, 21, 20, 19, 23],
+#     'Score': [85, 78, 60, 90, 55, 95, 70, 88, 80, 77, 65, 92, 75, 85, 83, 55, 89, 76, 90, 72],
+#     'Study Hours': [10, 9, 4, 12, 3, 14, 5, 11, 8, 7, 6, 13, 7, 10, 9, 3, 12, 6, 11, 5],
+#     'Attendance': [90, 85, 60, 95, 50, 98, 65, 92, 80, 75, 68, 96, 72, 88, 87, 55, 93, 70, 94, 67],
+#     'Test Difficulty': [3, 4, 5, 2, 5, 1, 4, 2, 3, 3, 4, 1, 3, 3, 2, 5, 2, 4, 1, 4]
+# }
+
+# # Convert to DataFrame
+# df = pd.DataFrame(data)
+
+# # Selecting Features (X) and Target (y)
+# X = df[["Age", "Study Hours", "Attendance", "Test Difficulty"]]
+# y = df["Score"]
+
+# # Split into Train & Test sets
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# # Train Linear Regression Model
+# model = LinearRegression()
+# model.fit(X_train, y_train)
+
+# # Predictions
+# y_pred = model.predict(X_test)
+
+# # Calculate Errors
+# r2 = r2_score(y_test, y_pred)
+# mae = mean_absolute_error(y_test, y_pred)
+# mse = mean_squared_error(y_test, y_pred)
+# rmse = np.sqrt(mse)
+
+# # Display results
+# print(f"R² Score (Accuracy): {r2:.2f}")
+# print(f"Mean Absolute Error (MAE): {mae:.2f}")
+# print(f"Mean Squared Error (MSE): {mse:.2f}")
+# print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
+
+# # Plot Actual vs Predicted Scores
+# plt.figure(figsize=(8,6))
+# plt.scatter(y_test, y_pred, color='blue', label='Predicted vs Actual')
+# plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linestyle='dashed', label='Ideal Fit')
+# plt.xlabel("Actual Scores")
+# plt.ylabel("Predicted Scores")
+# plt.title("Actual vs Predicted Scores")
+# plt.legend()
+# plt.show()
+
+# # Train Decision Tree for Visualization
+# tree_model = DecisionTreeRegressor(max_depth=3, random_state=42)
+# tree_model.fit(X_train, y_train)
+
+# # Plot Decision Tree
+# plt.figure(figsize=(12,8))
+# plot_tree(tree_model, feature_names=X.columns, filled=True, rounded=True)
+# plt.title("Decision Tree Visualization")
+# plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # import streamlit as st
 # st.write("Text before the line")
 
@@ -1145,6 +1227,22 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
+
+
+# Page configuration
+st.set_page_config(page_title="Data Visualization", layout="wide")
+
+# Hide Streamlit branding
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
 # Sample leave application data
 datafile = "employee_leave_2025.xlsx"
 
@@ -1194,6 +1292,8 @@ filtered_df = leave_df[
     ((leave_df['Employee_Name'] == selected_employee) | (selected_employee == "All")) &
     (leave_df['Reason'].isin(selected_leave_types))
 ]
+
+
 
 # Streamlit app layout
 st.title("📊 Customer Service Leave Trend Analysis by Month & Type")
