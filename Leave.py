@@ -50,7 +50,7 @@
 # print(f"Mean Squared Error (MSE): {mse:.2f}")
 # print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
 
-# # Plot Actual vs Predicted Scores
+# Plot Actual vs Predicted Scores
 # plt.figure(figsize=(8,6))
 # plt.scatter(y_test, y_pred, color='blue', label='Predicted vs Actual')
 # plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linestyle='dashed', label='Ideal Fit')
@@ -61,7 +61,7 @@
 # plt.show()
 
 # # Train Decision Tree for Visualization
-# tree_model = DecisionTreeRegressor(max_depth=3, random_state=42)
+# tree_model = DecisionTreeRegressor(max_depth=2, random_state=42)
 # tree_model.fit(X_train, y_train)
 
 # # Plot Decision Tree
@@ -922,9 +922,9 @@
 # # Sample data (replace with your actual dataset)
 # data = {
 #     "Department": ["Customer Service Dept", "Commercial Dept"],
-#     "Success_Ratio": [96.43, 90.00],
-#     "Call_Drop_Rate": [30.25, 68.75],
-#     "FCR_Rate": [67.24, 28.12]
+#     "Success_Ratio": [96.32, 88.89],
+#     "Call_Drop_Rate": [30.48, 70.96],
+#     "FCR_Rate": [66.95, 25.80]
 # }
 
 # # Create DataFrame
