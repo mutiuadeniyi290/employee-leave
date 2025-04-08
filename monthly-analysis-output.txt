@@ -1,0 +1,87 @@
+Total self-exclusion requests for the month: 68
+
+Observation Rating Counts:
+low       57
+medium    11
+
+Requests by Medium:
+REQUEST MEDIUM  Occurrence
+            BM          34
+    phone call          21
+   SM(TWITTER)          12
+        SM(IG)           1
+
+Requests by User Reason:
+                             USER REASON  Count
+                          Needed a break     47
+            To limit spending on betting     11
+           To control gambling behaviour      7
+       Excluded himself due to addiction      1
+Excluded himself due to lack of winnings      1
+                  Not financially stable      1
+
+State Counts:
+    STATE  Count                                                                                                                                                                                                                                                                                                             USERS
+    LAGOS     32 8967445, 22577673, 240334, 941709, 18979552, 22411922, 1214302, 22588292, 4875820, 22521740, 22376335, 16589891, 985043, 2784757, 17964776, 22601396, 22501430, 20426844, 22641866, 22516915, 22691621, 15941201, 2608075, 22490252, 20132389, 20825207, 22533587, 1112932, 22612623, 20275022, 22338186, 1633519
+    DELTA      4                                                                                                                                                                                                                                                                             12723673, 20604451, 6680627, 13464957
+      OYO      4                                                                                                                                                                                                                                                                              7704317, 17499086, 13225176, 6798402
+AKWA IBOM      3                                                                                                                                                                                                                                                                                       10087889, 20768625, 6561182
+    ABUJA      3                                                                                                                                                                                                                                                                                       20859549, 17992395, 4784183
+    NIGER      3                                                                                                                                                                                                                                                                                        19149565, 7615410, 9881178
+    KWARA      3                                                                                                                                                                                                                                                                                      17812664, 17372585, 16614294
+     ABIA      2                                                                                                                                                                                                                                                                                                  5168424, 9289982
+  ANAMBRA      2                                                                                                                                                                                                                                                                                                 21984140, 7705472
+      EDO      2                                                                                                                                                                                                                                                                                                   30334, 22673239
+  PLATEAU      2                                                                                                                                                                                                                                                                                                20308977, 16108433
+ NASARAWA      1                                                                                                                                                                                                                                                                                                           3605585
+   RIVERS      1                                                                                                                                                                                                                                                                                                          12048323
+  KATSINA      1                                                                                                                                                                                                                                                                                                           7187718
+     KOGI      1                                                                                                                                                                                                                                                                                                           5304454
+   KADUNA      1                                                                                                                                                                                                                                                                                                          13975242
+      IMO      1                                                                                                                                                                                                                                                                                                          20574715
+  ADAMAWA      1                                                                                                                                                                                                                                                                                                           7673415
+   TARABA      1                                                                                                                                                                                                                                                                                                          21792706
+
+Top and Bottom 3 States:
+Top 3 states:     STATE  Count                                              USERS
+12  LAGOS     32  8967445, 22577673, 240334, 941709, 18979552, 2...
+5   DELTA      4              12723673, 20604451, 6680627, 13464957
+15    OYO      4               7704317, 17499086, 13225176, 6798402
+least 3 states:        STATE  Count     USERS
+13  NASARAWA      1   3605585
+17    RIVERS      1  12048323
+9    KATSINA      1   7187718
+   STATE  Count                                                                                                                                                                                                                                                                                                             USERS
+   LAGOS     32 8967445, 22577673, 240334, 941709, 18979552, 22411922, 1214302, 22588292, 4875820, 22521740, 22376335, 16589891, 985043, 2784757, 17964776, 22601396, 22501430, 20426844, 22641866, 22516915, 22691621, 15941201, 2608075, 22490252, 20132389, 20825207, 22533587, 1112932, 22612623, 20275022, 22338186, 1633519
+   DELTA      4                                                                                                                                                                                                                                                                             12723673, 20604451, 6680627, 13464957
+     OYO      4                                                                                                                                                                                                                                                                              7704317, 17499086, 13225176, 6798402
+NASARAWA      1                                                                                                                                                                                                                                                                                                           3605585
+  RIVERS      1                                                                                                                                                                                                                                                                                                          12048323
+ KATSINA      1                                                                                                                                                                                                                                                                                                           7187718
+
+Daily Resolutions:
+      DATE  Resolutions Count
+2025-03-14                 10
+2025-03-24                  6
+2025-03-08                  5
+2025-03-28                  4
+2025-03-05                  4
+2025-03-07                  4
+2025-03-10                  4
+2025-03-23                  4
+2025-03-03                  4
+2025-03-21                  3
+2025-03-17                  3
+2025-03-22                  2
+2025-03-15                  2
+2025-03-27                  2
+2025-03-12                  2
+2025-03-30                  2
+2025-03-29                  1
+2025-03-02                  1
+2025-03-18                  1
+2025-03-26                  1
+2025-03-25                  1
+2025-03-04                  1
+2025-03-31                  1
+Correlation between Count and Self-Excluded Users: 0.9999999999999999

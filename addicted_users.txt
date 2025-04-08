@@ -1,3 +1,0 @@
-Addicted Users:
- DATE   USERS  REQUEST MEDIUM  USER REASON  NUMBER OF TIME  SELF-EXCLUDED PERIOD  OBSERVATION RATING  ADDICTED
-4-Feb 1530444               2            0               2                     2                   1         1

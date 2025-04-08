@@ -1,5 +1,37 @@
 
 
+# import streamlit as st
+
+# st.markdown(
+#     """
+#     <style>
+#     .marquee-box {
+#         background-color: #2E8B57;
+#         color: white;
+#         padding: 10px;
+#         border-radius: 10px;
+#         text-align: center;
+#         font-size: 18px;
+#         font-weight: bold;
+#         animation: marquee 8s linear infinite;
+#     }
+
+#     @keyframes marquee {
+#         from { transform: translateX(50%); }
+#         to { transform: translateX(-50%); }
+#     }
+#     </style>
+
+#     <div class="marquee-box">⏳ Don't forget to apply for your leave in advance! 📝</div>
+#     """,
+#     unsafe_allow_html=True
+# )
+
+
+
+
+
+
 
 # import pandas as pd
 # import numpy as np
@@ -922,9 +954,9 @@
 # # Sample data (replace with your actual dataset)
 # data = {
 #     "Department": ["Customer Service Dept", "Commercial Dept"],
-#     "Success_Ratio": [96.32, 88.89],
-#     "Call_Drop_Rate": [30.48, 70.96],
-#     "FCR_Rate": [66.95, 25.80]
+#     "Success_Ratio": [90.29, 85.71],
+#     "Call_Drop_Rate": [29.53, 54.83],
+#     "FCR_Rate": [63.62, 38.70]
 # }
 
 # # Create DataFrame
@@ -1295,8 +1327,18 @@ filtered_df = leave_df[
 
 
 
-# Streamlit app layout
-st.title("📊 Customer Service Leave Trend Analysis by Month & Type")
+col1, col2, col3 = st.columns([1, 6, 1])
+
+with col1:
+    st.image("logo.jpeg", width=40)
+
+with col2:
+    st.markdown("### 📊 Customer Service Leave Trend Analysis by Month & Type")
+
+with col3:
+    st.image("logo.jpeg", width=40)
+
+
 
 st.write("""
 This dashboard visualizes the number of leave applications per month, categorized by leave type.
@@ -1486,6 +1528,33 @@ with col2:
     st.write("**Bottom 5 Employees with Least Leave Taken**")
     st.dataframe(bottom_5_least_leave)
    
+
+st.markdown(
+    """
+    <style>
+    .marquee-box {
+        background-color: #2E8B57;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        animation: marquee 8s linear infinite;
+    }
+
+    @keyframes marquee {
+        from { transform: translateX(50%); }
+        to { transform: translateX(-50%); }
+    }
+    </style>
+    
+
+    <div class="marquee-box">📋 Please review the detailed leave application report and promptly report any errors with full supporting information. 📝</div>
+
+    """,
+    unsafe_allow_html=True
+)
 
 
 
